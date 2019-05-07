@@ -92,7 +92,7 @@ function poseJeton(j){
 }
 
 function refreshTableau(x, y, i){
-	document.getElementById(x+'-'+y).innerHTML = "<div class='joueur'>"+i+"</div>"
+	document.getElementById(x+'-'+y).innerHTML = "<div class='joueur"+i+"'></div>"
 }
 
 function puissance4(ligne, colonne, l, c){
