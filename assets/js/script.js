@@ -96,6 +96,6 @@ function refreshTableau(x, y, i){
 }
 
 function puissance4(ligne, colonne, l, c){
-	console.log('valeur: '+ligne+''+colonne+' / incremente '+l+' '+c);
+	console.log('valeur: '+ligne+' '+colonne+' / incremente '+l+' '+c);
 	return false;
 }
