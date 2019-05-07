@@ -18,7 +18,20 @@ function newGame(){
 			
 		}
 	}
-	numJoueur = 1;
-	afficheTextAnnonce("Le jeu commence ! c'est au tour du joueur"+nomJoueur(numJoueur));
+	var Joueur = 1;
+	afficheTextAnnonce("Le jeu commence ! c'est au tour du joueur"+nomJoueur(Joueur));
 	jeu = true;
+	creerTableau();
+}
+
+function afficheTextAnnonce(text){
+	document.getElementById('textAnnonce').innerHTML = text;
+}
+
+function nomDuJoueur(numJoueur){
+	if (numJoueur == 1) {
+		return "rouge";
+	}else{
+		return "bleu";
+	}
 }
