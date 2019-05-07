@@ -18,17 +18,17 @@ function newGame(){
 			
 		}
 	}
-	var Joueur = 1;
-	afficheTextAnnonce("Le jeu commence ! c'est au tour du joueur"+nomJoueur(Joueur));
+	var joueur = 1;
+	afficheTextAnnonce("Le jeu commence ! c'est au tour du joueur " +nomJoueur(joueur));
 	jeu = true;
 	creerTableau();
 }
 
-function afficheTextAnnonce(text){
-	document.getElementById('textAnnonce').innerHTML = text;
+function afficheTextAnnonce(texte){
+	document.getElementById('textAnnonce').innerHTML = texte;
 }
 
-function nomDuJoueur(numJoueur){
+function nomJoueur(numJoueur){
 	if (numJoueur == 1) {
 		return "rouge";
 	}else{
@@ -36,21 +36,21 @@ function nomDuJoueur(numJoueur){
 	}
 }
 function creerTableau(){
-	text = "<table>"
+	text = "<table>";
 	for (var i = 0; i < nbLigne; i++) {
-		text = "<tr>"
+		text += "<tr>";
 		for (var j = 0; j < nbColonne; j++) {
-			text = "<td onclick="detectClik(j)" id=""";
+			text += "<td onclick='detectClik("+j+")' id='"+i+"-"+j+"'>";
 			if (plateau[i][j] == 1) {
-				text += "<div class ="joueur1"</div>"
+				text += "<div class ='joueur1'></div>";
 			}
-			if (plateau[i][j] == 2){
-				text += "<div class ="joueur2"</div>"
+			else if (plateau[i][j] == 2){
+				text += "<div class ='joueur2'></div>";
 			}
-			text += "</td>"
+			text += "</td>";
 		}
-		text += "</tr>"
+		text += "</tr>";
 	}
-	text += "</table>"
-	document.getElementById('puissance4').innerHTML = text;
+	text += "</table>";
+	document.getElementById("puissance4").innerHTML = text;
 }
